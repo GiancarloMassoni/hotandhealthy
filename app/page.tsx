@@ -6,12 +6,19 @@ function AboveTheFold () {
   return(
     <div className="w-full bg-red-700 text-white">
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2  gap-2 p-0">
+        <div className="max-w-[65%] mx-auto grid grid-cols-1 lg:grid-cols-2  gap-2 p-0">
           <div className="px-4 lg:pt-6">
-          <h1 className="mx-10 mt-20 mb-4 text-center text-5xl font-bold md:mx-0 md:text-7xl lg:text-left italic">HOT & HEALTHY
+          <h1 className="mx-20 mt-20 mb-4 text-center text-5xl font-bold md:mx-0 md:text-7xl lg:text-left leading-normal  ">
+            Sweat in style.<br/> Flow with strength.<br />
+            <span className="text-shadow-[0_25px_15px_rgb(0_0_0_/_0.45)] italic">Live HOT & HEALTHY.
+              </span>
+            
+            {/* HOT & HEALTHY */}
           </h1>
-          <h2 className="font-base mb-6 text-center text-lg md:text-2xl lg:text-left">Feel Strong. Move Confidently. <br/>
-          Personalized fitness coaching that fits your goals, your lifestyle, and your schedule.<br /> Real support, real results—let&apos;s get started.
+          <h2 className="font-base mb-6 text-center text-lg md:text-2xl lg:text-left">
+            {/* Sweat in style. Flow with strength. Live Hot & Healthy. */}
+            {/* Feel Strong. Move Confidently. <br/> */}
+          {/* Personalized fitness coaching that fits your goals, your lifestyle, and your schedule.<br /> Real support, real results—let&apos;s get started. */}
 
 
           </h2>
