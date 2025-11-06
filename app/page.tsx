@@ -1,87 +1,93 @@
-import Image from "next/image";
-import Navbar from "@/components/Navbar";
-import Link from "next/link";
 
-function AboveTheFold () {
-  return(
-    <div className="w-full bg-red-700 text-white">
-
-        <div className="max-w-[65%] mx-auto grid grid-cols-1 lg:grid-cols-2  gap-2 p-0">
-          <div className="px-4 lg:pt-6">
-          <h1 className="mx-20 mt-20 mb-4 text-center text-5xl font-bold md:mx-0 md:text-7xl lg:text-left leading-normal  ">
-            Sweat in style.<br/> Flow with strength.<br />
-            <span className="text-shadow-[0_25px_15px_rgb(0_0_0_/_0.45)] italic">Live HOT & HEALTHY.
-              </span>
-            
-            {/* HOT & HEALTHY */}
-          </h1>
-          <h2 className="font-base mb-6 text-center text-lg md:text-2xl lg:text-left">
-            {/* Sweat in style. Flow with strength. Live Hot & Healthy. */}
-            {/* Feel Strong. Move Confidently. <br/> */}
-          {/* Personalized fitness coaching that fits your goals, your lifestyle, and your schedule.<br /> Real support, real results—let&apos;s get started. */}
+import { Dialog, DialogPanel } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Navbar from '@/components/Navbar'
+import Image from 'next/image'
+import kateheader from '@/public/kateheader.jpeg'
+import yogalates from '@/public/yogalates.svg'   
+import meal from '@/public/meal.svg'
+import calendar from '@/public/calendar.svg'
 
 
-          </h2>
-          <Link className="font-semibold text-primary-800 flex justify-center lg:justify-start" href="/">
-          <span className="pr-1">Learn More</span>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true" className="inline-block h-6 w-6"><path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path></svg>
-          </Link>
+function AboveTheFold() {
+
+  return (
+    <div className="bg-secondary font-body text-textPrimary">
+      <Navbar/>
+
+      <div className="relative isolate px-6 pt-14 lg:px-8">
+        <div className="mx-auto max-w-7xl  grid grid-cols-1 lg:grid-cols-2">  
+          <div className="text-center py-32 sm:py-48 ">
+            <h1 className="text-5xl tracking-tight text-balance text-textPrimary sm:text-7xl font-heading ">
+              Move with Intention. Nourish with Purpose.
+            </h1>
+            <p className="mt-8 text-lg font-medium text-textSecondary sm:text-xl/8 ">
+              Private events and personalized meal plans
+            </p>
+            <div className="mt-10 flex items-center justify-center gap-x-6">
+              <a
+                href="#"
+                className=" bg-primary text-light px-6 py-3 rounded-full font-body font-medium hover:bg-accent transition"
+              >
+                Book a Class
+              </a>
+              
+              <button className="border border-primary text-primary px-6 py-3 rounded-full font-body font-medium hover:bg-primary hover:text-light transition">
+                Learn More
+              </button>
+            </div>
           </div>
-          <div className="relative w-full flex justify-center">
-            <iframe width="472" height="740" src="https://www.instagram.com/p/DFlyITayHh0/embed/" frameBorder="0"></iframe>
-
-             {/* <Image src="/hhai.png" alt={""} className="" fill/> */}
-          </div>
-          <div>
-
-        {/* <Image src="/hhai.png" alt={""} className="object-fit" fill/> */}
-
+          <div className='lg:py-10 flex justify-center items-center'>
+            <Image src={kateheader} alt={''} className='object-contain rounded-l-4xl border-b-1 border-l-1 border-t-1 border-neutral-200 ' height={48} width={550}></Image>
           </div>
         </div>
-        </div>
+       
+      </div>
+    </div>
   )
 }
 
-function BelowTheFold () {
+function BelowTheFold() {
   return(
-      <div className="w-full bg-white text-red-700">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 p-0">
-          <div className="px-4">
-          <h2 className="mx-10 mt-20 mb-4 text-5xl font-bold md:mx-0 md:text-7xl text-center italic">EVENTS
-          </h2>
-          {/* <Link href='/'> */}
-          <h3 className="font-semibold  text-4xl flex justify-center pb-10">See Upcoming Events</h3>
-          {/* </Link> */}
-          <div>
-          <div className="flex justify-center">
-             <iframe src="https://calendar.google.com/calendar/embed?src=bbc87d8bf4661ade95c97e7f350ad5c1488ec6e1720d2f7fb64cb3c6a48301c5%40group.calendar.google.com&ctz=America%2FLos_Angeles" style={{border: 0}} width="800" height="600" frameBorder="0" scrolling="no"
-          ></iframe> </div>
-          </div>
-        
-      </div>
-      </div>
-      </div>)
+    <div className="bg-primary font-body text-textPrimary">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8 py-12">
+        <div className='min-h-48 bg-secondary rounded-2xl p-6 flex flex-col justify-center items-center shadow-2xl'>
+          <h3 className='text-2xl pb-5 font-heading'>Private Events</h3>
+          <Image src={yogalates} alt={''} height={75} className=''/>
+          <p className='py-4 text-textSecondary'>
+            I host private events that combine wellness and fitness, offering personalized Mat Pilates and Hot Yoga Sculpt sessions. Perfect for small groups, team-building, or special gatherings, each session is tailored to your group&apos;s energy and goals.
+          </p>
+            <a href="#" className=" bg-primary text-light px-6 py-3 rounded-full font-body font-medium hover:bg-accent transition">
+                Learn More
+              </a>
+        </div>
+        <div className='min-h-48 bg-secondary rounded-2xl p-6 flex flex-col justify-center items-center shadow-2xl'>
+         <h3 className='text-2xl pb-5 font-heading'> Meal Plans</h3>
+         <Image src={meal} alt={''} height={90} className=''/>
+         <p className='py-5 text-textSecondary'>
+          I create personalized meal plans tailored to each individual&apos;s goals, preferences, and lifestyle. No two plans are the same, every plan is unique to help you eat well, feel your best, and achieve results that work for you.
+         </p>
+           <a href="#" className=" bg-primary text-light px-6 py-3 rounded-full font-body font-medium hover:bg-accent transition">
+                Learn More
+            </a>
+        </div>
+        <div className='min-h-48 bg-secondary rounded-2xl p-6 flex flex-col justify-center items-center shadow-2xl'>
+        <h3 className='text-2xl pb-5 font-heading'>Class Schedule</h3>
+        <Image src={calendar} alt={''} height={90} className=''/>
+        <p className='pt-5 text-textSecondary'>
+          
+        </p>
+        </div>
+        </div>
+    </div>
+  )
 }
 
-
-export default function Home() {
+export default function Page(){
   return (
-    <div>
-
-      <header className="bg-red-700">
-        <Navbar />
-      </header>
-      <main>
-        <AboveTheFold />
-        <BelowTheFold />
-
-
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-
-
-
-      </footer>
-    </div>
-  );
+          <>
+          <AboveTheFold />
+          <BelowTheFold />
+          </>
+  )
 }
