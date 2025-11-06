@@ -3,15 +3,13 @@
 
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: only light;
 }
 
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    color-scheme: only light;
   }
 }
 
