@@ -1,0 +1,12 @@
+@theme {
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Lato", sans-serif;
+
+  --color-primary: #C58A7A;
+  --color-secondary: #F6F1EB;
+  --color-light: #FFFFFF;
+  --color-textPrimary: #2E2E2E;
+  --color-textSecondary: #6B6B6B;
+  --color-accent: #D7B9AA;
+  --color-border: #E8E2DC;
+}

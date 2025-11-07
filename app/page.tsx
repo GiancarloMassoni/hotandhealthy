@@ -7,6 +7,7 @@ import kateheader from '@/public/kateheader.jpeg'
 import yogalates from '@/public/yogalates.svg'   
 import meal from '@/public/meal.svg'
 import calendar from '@/public/calendar.svg'
+import ClassSchedule from '@/components/ClassSchedule'
 
 
 function AboveTheFold() {
@@ -110,103 +111,77 @@ function BelowTheFold() {
   )
 }
 
-function ClassSchedule() {
-   const classes = [
-    {
-      day: "Monday",
-      time: "7:00 AM",
-      class: "Mat Pilates",
-      studio: "CoreHouse Studio",
-      link: "#",
-    },
-    {
-      day: "Tuesday",
-      time: "6:00 PM",
-      class: "Yoga Sculpt",
-      studio: "HotRoom",
-      link: "#",
-    },
-    {
-      day: "Wednesday",
-      time: "8:30 AM",
-      class: "Mat Pilates",
-      studio: "Balance Loft",
-      link: "#",
-    },
-    {
-      day: "Friday",
-      time: "5:30 PM",
-      class: "Yoga Sculpt",
-      studio: "CoreHouse Studio",
-      link: "#",
-    },
-    {
-      day: "Sunday",
-      time: "9:00 AM",
-      class: "Mat Pilates",
-      studio: "HotRoom",
-      link: "#",
-    },
-  ];
-  return (
-    <section id="schedule" className="w-full bg-secondary py-16 px-6 ">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl text-textPrimary font-heading mb-2">Class Schedule</h2>
-        <p className="text-gray-600 mb-10 font-body">
-          Find me teaching at studios across Orange County. Join a class that fits your vibe and location.
-        </p>
+// function ClassSchedule() {
+//     const classes = [
+//     { day: "Monday", time: "8:30 AM", class: "Yogalates", studio: "Class 46", link: "#" },
+//     { day: "Monday", time: "5:30 PM", class: "Ass & Abs", studio: "Sculpt Studios", link: "#" },
+//     { day: "Monday", time: "6:45 PM", class: "Ass & Abs", studio: "Sculpt Studios", link: "#" },
+//     { day: "Tuesday", time: "8:30 AM", class: "Sculpt", studio: "Sculpted Space", link: "#" },
+//     { day: "Tuesday", time: "9:30 AM", class: "Sculpt", studio: "Sculpted Space", link: "#" },
+//     { day: "Tuesday", time: "10:30 AM", class: "Sculpt", studio: "Sculpted Space", link: "#" },
+//     { day: "Tuesday", time: "4:45 PM", class: "Yogalates", studio: "Class 46", link: "#" },
+//     { day: "Wednesday", time: "9:45 AM", class: "Ass & Abs", studio: "Sculpt Studios", link: "#" },
+//     { day: "Wednesday", time: "4:30 PM", class: "Yoga Sculpt", studio: "Class 46", link: "#" },
+//     { day: "Wednesday", time: "6:00 PM", class: "Yogalates", studio: "Class 46", link: "#" },
+//     { day: "Thursday", time: "8:30 AM", class: "Arms & Abs", studio: "Sculpt Studios", link: "#" },
+//     { day: "Thursday", time: "9:30 AM", class: "Arms & Abs", studio: "Sculpt Studios", link: "#" },
+//     { day: "Thursday", time: "12:00 PM", class: "Yogalates", studio: "Class 46", link: "#" },
+//   ];
 
-        <div className="overflow-x-auto font-body">
-          <table className="w-full text-left border-separate border-spacing-y-2">
-            <thead>
-              <tr className="text-gray-700 text-sm uppercase tracking-wider">
-                <th className="p-3">Day</th>
-                <th className="p-3">Time</th>
-                <th className="p-3">Class</th>
-                <th className="p-3">Studio</th>
-                <th className="p-3 text-right">Link</th>
-              </tr>
-            </thead>
-            <tbody>
-              {classes.map((item, i) => (
-                <tr
-                  key={i}
-                  className="bg-white text-textSecondary shadow-sm rounded-xl hover:shadow-md transition"
-                >
-                  <td className="p-3">{item.day}</td>
-                  <td className="p-3">{item.time}</td>
-                  <td className="p-3">{item.class}</td>
-                  <td className="p-3">{item.studio}</td>
-                  <td className="p-3 text-right">
-                    <a
-                      href={item.link}
-                      className="text-sm text-gray-800 underline hover:text-gray-500"
-                    >
-                      View Schedule →
-                    </a>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+//   // Group classes by day
+//   const grouped = classes.reduce((acc: any, cls) => {
+//     if (!acc[cls.day]) acc[cls.day] = [];
+//     acc[cls.day].push(cls);
+//     return acc;
+//   }, {});
 
-        <div className="mt-10">
-          <h3 className="text-xl font-body mb-2 text-textPrimary">Private Sessions</h3>
-          <p className="text-gray-600 mb-4 font-body">
-            Book a personalized Mat Pilates or Yoga Sculpt session tailored to your goals.
-          </p>
-          <a
-            href="#"
-            className="inline-block bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition font-body"
-          >
-            Inquire Here
-          </a>
-        </div>
-      </div>
-    </section>
-    )
-}
+//   return (
+//     <section className="w-full bg-[#F6F1EB] py-16 px-6">
+//       <div className="max-w-4xl mx-auto text-center">
+//         <h2 className="text-3xl font-semibold mb-2">Class Schedule</h2>
+//         <p className="text-gray-600 mb-10">
+//           Find me teaching at multiple studios across Orange County. Join a class that fits your vibe and location.
+//         </p>
+
+//         <div className="space-y-8">
+//           {Object.entries(grouped).map(([day, dayClasses]: any) => (
+//             <div key={day} className="bg-white shadow-sm rounded-xl p-6">
+//               <h3 className="text-xl font-medium mb-4">{day}</h3>
+//               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+//                 {dayClasses.map((cls: any, idx: number) => (
+//                   <div key={idx} className="p-4 border rounded-lg hover:shadow-md transition">
+//                     <p className="font-semibold">{cls.class}</p>
+//                     <p className="text-gray-600">{cls.time} • {cls.studio}</p>
+//                     <a
+//                       href={cls.link}
+//                       className="text-sm text-gray-800 underline hover:text-gray-500"
+//                     >
+//                       View Schedule →
+//                     </a>
+//                   </div>
+//                 ))}
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+
+//         <div className="mt-10 text-center">
+//           <h3 className="text-xl font-medium mb-2">Private Sessions</h3>
+//           <p className="text-gray-600 mb-4">
+//             Book a personalized Mat Pilates or Yoga Sculpt session tailored to your goals.
+//           </p>
+//           <a
+//             href="#"
+//             className="inline-block bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition"
+//           >
+//             Inquire Here
+//           </a>
+//         </div>
+//       </div>
+//     </section>
+//   );
+
+// }
 
 export default function Page(){
   return (
