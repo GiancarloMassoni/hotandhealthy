@@ -1,47 +1,48 @@
 'use client'
 import { useState } from "react";
+
 interface ClassItem {
   day: string;
   time: string;
   class: string;
   studio: string;
   link: string;
+  location: string;
 }
+
 export default function ClassSchedule() {
-  const classes = [
-    { day: "Monday", time: "8:30 AM", class: "Yogalates", studio: "Class 46", link: "#" },
-    { day: "Monday", time: "5:30 PM", class: "Ass & Abs", studio: "Sculpt Studios", link: "#" },
-    { day: "Monday", time: "6:45 PM", class: "Ass & Abs", studio: "Sculpt Studios", link: "#" },
-    { day: "Tuesday", time: "8:30 AM", class: "Sculpt", studio: "Sculpted Space", link: "#" },
-    { day: "Tuesday", time: "9:30 AM", class: "Sculpt", studio: "Sculpted Space", link: "#" },
-    { day: "Tuesday", time: "10:30 AM", class: "Sculpt", studio: "Sculpted Space", link: "#" },
-    { day: "Tuesday", time: "4:45 PM", class: "Yogalates", studio: "Class 46", link: "#" },
-    { day: "Wednesday", time: "9:45 AM", class: "Ass & Abs", studio: "Sculpt Studios", link: "#" },
-    { day: "Wednesday", time: "4:30 PM", class: "Yoga Sculpt", studio: "Class 46", link: "#" },
-    { day: "Wednesday", time: "6:00 PM", class: "Yogalates", studio: "Class 46", link: "#" },
-    { day: "Thursday", time: "8:30 AM", class: "Arms & Abs", studio: "Sculpt Studios", link: "#" },
-    { day: "Thursday", time: "9:30 AM", class: "Arms & Abs", studio: "Sculpt Studios", link: "#" },
-    { day: "Thursday", time: "12:00 PM", class: "Yogalates", studio: "Class 46", link: "#" },
+  const classes: ClassItem[] = [
+    { day: "Monday", time: "8:30 AM", class: "Yogalates", studio: "Class 46", link: "https://www.class46yoga.com/schedule-book?_mt=%2Fschedule%2Fdaily%2F48541%3Flocations%3D48717" , location: " 5565 E Santa Ana Canyon Rd, Anaheim, CA 92807" },
+    { day: "Monday", time: "5:30 PM", class: "Ass & Abs", studio: "Sculpt Studios", link: "#", location: "872 North Tustin Street Orange, CA 92867" },
+    { day: "Monday", time: "6:45 PM", class: "Ass & Abs", studio: "Sculpt Studios", link: "#", location: "872 North Tustin Street Orange, CA 92867" },
+    { day: "Tuesday", time: "8:30 AM", class: "Sculpt", studio: "Sculpted Space", link: "#", location: "1111 W Town and Country Rd STE 10, Orange, CA 92868" },
+    { day: "Tuesday", time: "9:30 AM", class: "Sculpt", studio: "Sculpted Space", link: "#", location: "1111 W Town and Country Rd STE 10, Orange, CA 92868" },
+    { day: "Tuesday", time: "10:30 AM", class: "Sculpt", studio: "Sculpted Space", link: "#", location: "1111 W Town and Country Rd STE 10, Orange, CA 92868" },
+    { day: "Tuesday", time: "4:45 PM", class: "Yogalates", studio: "Class 46", link: "https://www.class46yoga.com/schedule-book?_mt=%2Fschedule%2Fdaily%2F48541%3Flocations%3D48717", location: " 5565 E Santa Ana Canyon Rd, Anaheim, CA 92807" },
+    { day: "Wednesday", time: "9:45 AM", class: "Ass & Abs", studio: "Sculpt Studios", link: "#", location: "872 North Tustin Street Orange, CA 92867" },
+    { day: "Wednesday", time: "4:30 PM", class: "Yoga Sculpt", studio: "Class 46", link: "#", location: " 5565 E Santa Ana Canyon Rd, Anaheim, CA 92807" },
+    { day: "Wednesday", time: "6:00 PM", class: "Yogalates", studio: "Class 46", link: "https://www.class46yoga.com/schedule-book?_mt=%2Fschedule%2Fdaily%2F48541%3Flocations%3D48717", location: " 5565 E Santa Ana Canyon Rd, Anaheim, CA 92807" },
+    { day: "Thursday", time: "8:30 AM", class: "Arms & Abs", studio: "Sculpt Studios", link: "#", location: "872 North Tustin Street Orange, CA 92867" },
+    { day: "Thursday", time: "9:30 AM", class: "Arms & Abs", studio: "Sculpt Studios", link: "#", location: "872 North Tustin Street Orange, CA 92867" },
+    { day: "Thursday", time: "12:00 PM", class: "Yogalates", studio: "Class 46", link: "https://www.class46yoga.com/schedule-book?_mt=%2Fschedule%2Fdaily%2F48541%3Flocations%3D48717", location: " 5565 E Santa Ana Canyon Rd, Anaheim, CA 92807" },
   ];
 
   const [selectedStudio, setSelectedStudio] = useState<string>("All");
 
-  // Get unique studios
-  const studios = ["All", ...Array.from(new Set(classes.map(cls => cls.studio)))];
+  const studios: string[] = ["All", ...Array.from(new Set(classes.map((cls) => cls.studio)))];
 
-  // Assign colors to each studio
+  // Studio color accents
   const studioColors: Record<string, string> = {
-    "Class 46": "bg-neutral-200 border-neutral-400",
-    "Sculpt Studios": "bg-yellow-200 border-yellow-400",
-    "Sculpted Space": "bg-teal-200 border-teal-400",
+    "Class 46": "#C58A7A",       // warm rose
+    "Sculpt Studios": "#D9B5A0", // beige rose
+    "Sculpted Space": "#E8D7C5", // soft cream
   };
 
-  // Filter classes based on selected studio
-  const filteredClasses = selectedStudio === "All"
-    ? classes
-    : classes.filter(cls => cls.studio === selectedStudio);
+  const filteredClasses =
+    selectedStudio === "All"
+      ? classes
+      : classes.filter((cls) => cls.studio === selectedStudio);
 
-  // Group classes by day
   const grouped = filteredClasses.reduce<Record<string, ClassItem[]>>((acc, cls) => {
     if (!acc[cls.day]) acc[cls.day] = [];
     acc[cls.day].push(cls);
@@ -51,26 +52,32 @@ export default function ClassSchedule() {
   return (
     <section className="w-full bg-secondary py-16 px-6">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl  mb-2 font-heading">Class Schedule</h2>
-        <p className="text-gray-600 font-body mb-6">
+        <h2 className="text-3xl font-heading text-textPrimary mb-2">Class Schedule</h2>
+        <p className="text-textSecondary mb-6">
           Find me teaching at multiple studios across Orange County. Select a studio to see its classes.
         </p>
 
-        {/* Studio filter */}
+        {/* Studio Filter */}
         <div className="flex justify-center gap-3 flex-wrap mb-10">
-          {studios.map((studio) => (
-            <button
-              key={studio}
-              onClick={() => setSelectedStudio(studio)}
-              className={`px-4 py-2 rounded-full border ${
-                selectedStudio === studio
-                  ? "bg-black text-white"
-                  : "bg-white text-gray-800 hover:bg-gray-200"
-              } transition`}
-            >
-              {studio}
-            </button>
-          ))}
+          {studios.map((studio) => {
+            const color = studioColors[studio] || "#E8E8E8";
+            return (
+              <button
+                key={studio}
+                onClick={() => setSelectedStudio(studio)}
+                style={{
+                  backgroundColor:
+                    selectedStudio === studio ? "var(--color-primary)" : color,
+                  color: selectedStudio === studio ? "#FFFFFF" : "#2E2E2E",
+                  borderColor:
+                    selectedStudio === studio ? "var(--color-primary)" : color,
+                }}
+                className={`px-4 py-2 rounded-full border transition hover:opacity-80 shadow-sm`}
+              >
+                {studio}
+              </button>
+            );
+          })}
         </div>
 
         {/* Schedule */}
@@ -79,19 +86,30 @@ export default function ClassSchedule() {
             <p className="text-gray-600">No classes available for this studio.</p>
           ) : (
             Object.entries(grouped).map(([day, dayClasses]) => (
-              <div key={day} className="bg-white shadow-sm rounded-xl p-6">
-                <h3 className="text-xl font-medium mb-4">{day}</h3>
+              <div key={day} className="bg-white shadow-sm rounded-xl p-6 border border-[#F0E8E4]">
+                <h3 className="text-xl font-heading text-textPrimary mb-4">{day}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {dayClasses.map((cls, idx) => (
                     <div
                       key={idx}
-                      className={`p-4 border rounded-lg hover:shadow-md transition ${studioColors[cls.studio]}`}
+                      className="p-4 border rounded-lg hover:shadow-md transition bg-light border-[#E9DDD7]"
                     >
-                      <p className="font-semibold">{cls.class}</p>
-                      <p className="text-gray-700">{cls.time} • {cls.studio}</p>
+                      <p className="font-medium text-textPrimary">{cls.class}</p>
+                      <div className="flex items-center gap-2 text-textSecondary text-sm">
+                        <span>{cls.time}</span>
+                        <span className="flex items-center gap-1">
+                          <span
+                            className="inline-block w-2.5 h-2.5 rounded-full"
+                            style={{ backgroundColor: studioColors[cls.studio] }}
+                          ></span>
+                          {cls.studio}
+                        </span>
+                        <span className="text-xs">{cls.location}</span>
+                      </div>
                       <a
                         href={cls.link}
-                        className="text-sm text-gray-800 underline hover:text-gray-500"
+                        className="text-sm text-textPrimary underline hover:opacity-70 mt-1 inline-block"
+                        target="_blank"
                       >
                         View Schedule →
                       </a>
@@ -103,17 +121,31 @@ export default function ClassSchedule() {
           )}
         </div>
 
+        {/* Private Sessions */}
         <div className="mt-10 text-center">
-          <h3 className="text-xl font-medium mb-2">Private Sessions</h3>
-          <p className="text-gray-600 mb-4">
+          <h3 className="text-xl font-heading text-textPrimary mb-2">Private Sessions</h3>
+          <p className="text-textSecondary mb-4">
             Book a personalized Mat Pilates or Yoga Sculpt session tailored to your goals.
           </p>
           <a
             href="#"
-            className="inline-block bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition"
+            className="inline-block bg-primary text-white px-6 py-2 rounded-full hover:opacity-80 transition"
           >
             Inquire Here
           </a>
+        </div>
+
+        {/* Color Legend */}
+        <div className="flex justify-center gap-6 mt-12 text-sm text-textSecondary">
+          {Object.entries(studioColors).map(([studio, color]) => (
+            <div key={studio} className="flex items-center gap-2">
+              <span
+                className="inline-block w-3 h-3 rounded-full"
+                style={{ backgroundColor: color }}
+              ></span>
+              {studio}
+            </div>
+          ))}
         </div>
       </div>
     </section>
