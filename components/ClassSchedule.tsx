@@ -13,17 +13,17 @@ interface ClassItem {
 export default function ClassSchedule() {
   const classes: ClassItem[] = [
     { day: "Monday", time: "8:30 AM", class: "Yogalates", studio: "Class 46", link: "https://www.class46yoga.com/schedule-book?_mt=%2Fschedule%2Fdaily%2F48541%3Flocations%3D48717" , location: " 5565 E Santa Ana Canyon Rd, Anaheim, CA 92807" },
-    { day: "Monday", time: "5:30 PM", class: "Ass & Abs", studio: "Sculpt Studios", link: "#", location: "872 North Tustin Street Orange, CA 92867" },
-    { day: "Monday", time: "6:45 PM", class: "Ass & Abs", studio: "Sculpt Studios", link: "#", location: "872 North Tustin Street Orange, CA 92867" },
-    { day: "Tuesday", time: "8:30 AM", class: "Sculpt", studio: "Sculpted Space", link: "#", location: "1111 W Town and Country Rd STE 10, Orange, CA 92868" },
-    { day: "Tuesday", time: "9:30 AM", class: "Sculpt", studio: "Sculpted Space", link: "#", location: "1111 W Town and Country Rd STE 10, Orange, CA 92868" },
-    { day: "Tuesday", time: "10:30 AM", class: "Sculpt", studio: "Sculpted Space", link: "#", location: "1111 W Town and Country Rd STE 10, Orange, CA 92868" },
+    { day: "Monday", time: "5:30 PM", class: "Ass & Abs", studio: "Sculpt Studios", link: "https://www.sculptstudios-oc.com/", location: "872 North Tustin Street Orange, CA 92867" },
+    { day: "Monday", time: "6:45 PM", class: "Ass & Abs", studio: "Sculpt Studios", link: "https://www.sculptstudios-oc.com/", location: "872 North Tustin Street Orange, CA 92867" },
+    { day: "Tuesday", time: "8:30 AM", class: "Sculpt", studio: "Sculpted Space", link: "https://app.arketa.co/iframe/thesculptedspace/schedule", location: "1111 W Town and Country Rd STE 10, Orange, CA 92868" },
+    { day: "Tuesday", time: "9:30 AM", class: "Sculpt", studio: "Sculpted Space", link: "https://app.arketa.co/iframe/thesculptedspace/schedule", location: "1111 W Town and Country Rd STE 10, Orange, CA 92868" },
+    { day: "Tuesday", time: "10:30 AM", class: "Sculpt", studio: "Sculpted Space", link: "https://app.arketa.co/iframe/thesculptedspace/schedule", location: "1111 W Town and Country Rd STE 10, Orange, CA 92868" },
     { day: "Tuesday", time: "4:45 PM", class: "Yogalates", studio: "Class 46", link: "https://www.class46yoga.com/schedule-book?_mt=%2Fschedule%2Fdaily%2F48541%3Flocations%3D48717", location: " 5565 E Santa Ana Canyon Rd, Anaheim, CA 92807" },
-    { day: "Wednesday", time: "9:45 AM", class: "Ass & Abs", studio: "Sculpt Studios", link: "#", location: "872 North Tustin Street Orange, CA 92867" },
-    { day: "Wednesday", time: "4:30 PM", class: "Yoga Sculpt", studio: "Class 46", link: "#", location: " 5565 E Santa Ana Canyon Rd, Anaheim, CA 92807" },
+    { day: "Wednesday", time: "9:45 AM", class: "Ass & Abs", studio: "Sculpt Studios", link: "https://www.sculptstudios-oc.com/", location: "872 North Tustin Street Orange, CA 92867" },
+    { day: "Wednesday", time: "4:30 PM", class: "Yoga Sculpt", studio: "Class 46", link: "https://www.class46yoga.com/schedule-book?_mt=%2Fschedule%2Fdaily%2F48541%3Flocations%3D48717", location: " 5565 E Santa Ana Canyon Rd, Anaheim, CA 92807" },
     { day: "Wednesday", time: "6:00 PM", class: "Yogalates", studio: "Class 46", link: "https://www.class46yoga.com/schedule-book?_mt=%2Fschedule%2Fdaily%2F48541%3Flocations%3D48717", location: " 5565 E Santa Ana Canyon Rd, Anaheim, CA 92807" },
-    { day: "Thursday", time: "8:30 AM", class: "Arms & Abs", studio: "Sculpt Studios", link: "#", location: "872 North Tustin Street Orange, CA 92867" },
-    { day: "Thursday", time: "9:30 AM", class: "Arms & Abs", studio: "Sculpt Studios", link: "#", location: "872 North Tustin Street Orange, CA 92867" },
+    { day: "Thursday", time: "8:30 AM", class: "Arms & Abs", studio: "Sculpt Studios", link: "https://www.sculptstudios-oc.com/", location: "872 North Tustin Street Orange, CA 92867" },
+    { day: "Thursday", time: "9:30 AM", class: "Arms & Abs", studio: "Sculpt Studios", link: "https://www.sculptstudios-oc.com/", location: "872 North Tustin Street Orange, CA 92867" },
     { day: "Thursday", time: "12:00 PM", class: "Yogalates", studio: "Class 46", link: "https://www.class46yoga.com/schedule-book?_mt=%2Fschedule%2Fdaily%2F48541%3Flocations%3D48717", location: " 5565 E Santa Ana Canyon Rd, Anaheim, CA 92807" },
   ];
 
