@@ -1,6 +1,12 @@
 'use client'
 import { useState } from "react";
-
+interface ClassItem {
+  day: string;
+  time: string;
+  class: string;
+  studio: string;
+  link: string;
+}
 export default function ClassSchedule() {
   const classes = [
     { day: "Monday", time: "8:30 AM", class: "Yogalates", studio: "Class 46", link: "#" },
@@ -36,7 +42,7 @@ export default function ClassSchedule() {
     : classes.filter(cls => cls.studio === selectedStudio);
 
   // Group classes by day
-  const grouped = filteredClasses.reduce((acc: any, cls) => {
+  const grouped = filteredClasses.reduce<Record<string, ClassItem[]>>((acc, cls) => {
     if (!acc[cls.day]) acc[cls.day] = [];
     acc[cls.day].push(cls);
     return acc;
@@ -72,11 +78,11 @@ export default function ClassSchedule() {
           {Object.entries(grouped).length === 0 ? (
             <p className="text-gray-600">No classes available for this studio.</p>
           ) : (
-            Object.entries(grouped).map(([day, dayClasses]: any) => (
+            Object.entries(grouped).map(([day, dayClasses]) => (
               <div key={day} className="bg-white shadow-sm rounded-xl p-6">
                 <h3 className="text-xl font-medium mb-4">{day}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {dayClasses.map((cls: any, idx: number) => (
+                  {dayClasses.map((cls, idx) => (
                     <div
                       key={idx}
                       className={`p-4 border rounded-lg hover:shadow-md transition ${studioColors[cls.studio]}`}
