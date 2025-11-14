@@ -8,7 +8,12 @@ import yogalates from '@/public/yogalates.svg'
 import meal from '@/public/meal.svg'
 import calendar from '@/public/calendar.svg'
 import ClassSchedule from '@/components/ClassSchedule'
-
+import kateballpose from '@/public/kateballpose.png'
+import katepose from '@/public/katepose.jpeg'
+import sculptstudios from '@/public/sculptstudioslogo.png'
+import yoga6 from '@/public/yoga6logo.webp'
+import class46 from '@/public/class46logo.webp'
+import sculptedspace from '@/public/sculptedspace.jpeg'
 
 function AboveTheFold() {
 
@@ -16,11 +21,11 @@ function AboveTheFold() {
     <div className="bg-secondary font-body text-textPrimary">
       <Navbar/>
 
-      <div className="relative isolate px-6 pt-14 lg:px-8">
+      <div className="relative isolate px-2 pt-14 lg:px-8">
         <div className="mx-auto max-w-7xl  grid grid-cols-1 lg:grid-cols-2">  
           <div className="text-center lg:py-32 pt-32 pb-4 sm:py-48 ">
             <h1 className="text-5xl tracking-tight text-balance text-textPrimary sm:text-7xl font-heading ">
-              Move with Intention. Nourish with Purpose.
+              Move with Intention. <br/> Nourish with Purpose.
             </h1>
             <p className="mt-8 text-lg font-medium text-textSecondary sm:text-xl/8 ">
               Private events and personalized meal plans
@@ -47,6 +52,8 @@ function AboveTheFold() {
     </div>
   )
 }
+
+
 
 function BelowTheFold() {
   return(
@@ -111,13 +118,101 @@ function BelowTheFold() {
   )
 }
 
+function AboutMe() {
+  return (
+    <section id="aboutme">
+    <div className="bg-secondary font-body text-textPrimary relative py-10">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
 
+        {/* IMAGE WRAPPER */}
+        <div className="relative flex justify-center">
+
+          {/* MAIN LARGE IMAGE (same as your original but responsive) */}
+          <Image
+            src={kateballpose}
+            alt="Workout pose background"
+            className="
+              z-10 
+              rounded-b-2xl 
+              h-[300px] 
+              md:h-[650px] 
+              w-auto
+            "
+          />
+
+          {/* SMALL OVERLAY IMAGE (same concept, responsive offset) */}
+          <Image
+            src={katepose}
+            alt="Pose"
+            height={260}
+            className="
+              absolute 
+              z-20 
+              rounded-2xl
+              -bottom-40 
+              left-30 
+              -translate-x-1/2
+
+              md:-bottom-40 
+              md:left-[2%]
+              md:translate-x-0
+              
+              shadow-lg
+            "
+          />
+        </div>
+      <div className="absolute inset-0 top-75 bg-linear-to-r from-secondary via-primary to-secondary rounded-b-2xl"></div>
+        
+        <div className='grid grid-cols-1 md:grid-cols-2 pt-20 mt-40 md:mt-32 px-4 relative pb-16 gap-20'>
+          <div className=" ">
+            <h2 className="text-4xl md:text-5xl font-heading mb-4">About Me</h2>
+            <p className="text-textPrimary text-left max-w-3xl mx-auto leading-8">
+              Hi, I&apos;m Kate! I specialize
+              in Mat Pilates and Hot Yoga Sculpt, helping clients build strength,
+              flexibility, and balance. I also create personalized meal plans to
+              support your fitness journey.<br/> Whether you&apos;re looking to join a
+              class, host a private event, or need guidance on nutrition, I&apos;m
+              here to help you achieve your wellness goals. Let&apos;s move with
+              intention and nourish with purpose together!
+            </p>
+          </div>
+          <div className='bg-[#E7D9C8] rounded-l-2xl p-6 justify-center items-center shadow-2xl'>
+            <h3 className='font-heading text-textPrimary text-2xl mb-4 text-center'>Gyms You Can Find Me At</h3>
+            <div className='grid grid-cols-2 gap-10 justify-center items-center pt-2'>
+            
+              <div className='items-center flex justify-center'>
+                <Image src={yoga6} width={100} height={100} alt={''}></Image>
+              </div>
+               <div className='items-center flex justify-center'>
+                <Image src={sculptedspace} width={140} height={110} alt={''}></Image>
+              </div>
+              <div className='items-center flex justify-center'>
+                <Image src={sculptstudios} width={100} height={100} alt={''}></Image>
+              </div>
+              <div className='items-center flex justify-center'>
+                <Image src={class46} width={100} height={100} alt={''}></Image>
+              </div>
+              
+             
+              
+              
+              
+            </div>
+          </div>
+        </div>
+       
+
+      </div>
+    </div></section>
+  );
+}
 
 export default function Page(){
   return (
           <>
           <AboveTheFold />
           <BelowTheFold />
+          <AboutMe />
           <ClassSchedule/>
           </>
   )

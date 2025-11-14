@@ -50,7 +50,7 @@ export default function ClassSchedule() {
   }, {});
 
   return (
-    <section className="w-full bg-secondary py-16 px-6">
+    <section id="schedule" className="w-full bg-secondary py-16 px-6">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl font-heading text-textPrimary mb-2">Class Schedule</h2>
         <p className="text-textSecondary mb-6">
