@@ -5,7 +5,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import kbLogo from '@/public/kblogo.png'
 import Image from 'next/image'
 import Link from 'next/link'
-const navigation = [
+const navigation = [{ name: 'Home', href: '/' },
   { name: 'Events', href: '/events' },
   { name: 'Class Schedule', href: '/#schedule' },
   { name: 'Meal Plans', href: '/mealplans' },
