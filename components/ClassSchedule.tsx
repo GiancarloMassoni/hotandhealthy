@@ -1,5 +1,6 @@
 'use client'
 import { useState } from "react";
+import ContactModal from "./ContactModal";
 
 interface ClassItem {
   day: string;
@@ -127,12 +128,8 @@ export default function ClassSchedule() {
           <p className="text-textSecondary mb-4">
             Book a personalized Mat Pilates or Yoga Sculpt session tailored to your goals.
           </p>
-          <a
-            href="#"
-            className="inline-block bg-primary text-white px-6 py-2 rounded-full hover:opacity-80 transition"
-          >
-            Inquire Here
-          </a>
+          <ContactModal style={"inline-block bg-primary text-white px-6 py-2 rounded-full hover:opacity-80 transition"} text={"Inquire Here"}/>
+        
         </div>
 
         {/* Color Legend */}

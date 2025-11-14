@@ -3,6 +3,7 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Navbar from '@/components/Navbar'
 import Image from 'next/image'
+import ContactModal from '@/components/ContactModal'
 import kateheader from '@/public/kateheader.jpeg'
 import yogalates from '@/public/yogalates.svg'   
 import meal from '@/public/meal.svg'
@@ -14,14 +15,13 @@ import sculptstudios from '@/public/sculptstudioslogo.png'
 import yoga6 from '@/public/yoga6logo.webp'
 import class46 from '@/public/class46logo.webp'
 import sculptedspace from '@/public/sculptedspace.jpeg'
+import Link from 'next/link'
 
 function AboveTheFold() {
 
   return (
     <div className="bg-secondary font-body text-textPrimary">
-      <Navbar/>
-
-      <div className="relative isolate px-2 pt-14 lg:px-8">
+      <div className="relative px-2 pt-14 lg:px-8">
         <div className="mx-auto max-w-7xl  grid grid-cols-1 lg:grid-cols-2">  
           <div className="text-center lg:py-32 pt-32 pb-4 sm:py-48 ">
             <h1 className="text-5xl tracking-tight text-balance text-textPrimary sm:text-7xl font-heading ">
@@ -32,15 +32,12 @@ function AboveTheFold() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="#"
+                href="#schedule"
                 className=" bg-primary text-light px-6 py-3 rounded-full font-body font-medium hover:bg-accent transition"
               >
                 Book a Class
               </a>
-              
-              <button className="border border-primary text-primary px-6 py-3 rounded-full font-body font-medium hover:bg-primary hover:text-light transition">
-                Learn More
-              </button>
+              <ContactModal style={'border border-primary text-primary px-6 py-3 rounded-full font-body font-medium hover:bg-primary hover:text-light transition'} text={'Contact'}/>
             </div>
           </div>
           <div className='lg:py-10 pb-5 flex justify-center items-center'>
@@ -69,12 +66,12 @@ function BelowTheFold() {
         Build strength and balance with weekly Mat Pilates and Yoga Sculpt classes. Check the schedule to join a session and move, tone, and feel your best.
       </p>
     </div>
-    <a
-      href="#schedule"
+    <Link
+      href="/#schedule"
       className="mt-6 bg-primary text-light px-6 py-3 rounded-full font-body font-medium hover:bg-accent transition"
     >
       Learn More
-    </a>
+    </Link>
   </div>
         <div className="bg-secondary rounded-2xl p-6 flex flex-col justify-between items-center shadow-2xl">
     <div className="flex flex-col items-center flex-1">
@@ -86,12 +83,12 @@ function BelowTheFold() {
         I host private events that combine wellness and fitness, offering personalized Mat Pilates and Hot Yoga Sculpt sessions. Perfect for small groups, team-building, or special gatherings, each session is tailored to your group&apos;s energy and goals.
       </p>
     </div>
-    <a
-      href="#"
+    <Link
+      href="/events"
       className="mt-6 bg-primary text-light px-6 py-3 rounded-full font-body font-medium hover:bg-accent transition"
     >
       Learn More
-    </a>
+    </Link>
   </div>
 
   <div className="bg-secondary rounded-2xl p-6 flex flex-col justify-between items-center shadow-2xl">
@@ -104,12 +101,12 @@ function BelowTheFold() {
         I create personalized meal plans tailored to each individual&apos;s goals, preferences, and lifestyle. No two plans are the same, every plan is unique to help you eat well, feel your best, and achieve results that work for you.
       </p>
     </div>
-    <a
-      href="#"
+    <Link
+      href="/mealplans"
       className="mt-6 bg-primary text-light px-6 py-3 rounded-full font-body font-medium hover:bg-accent transition"
     >
       Learn More
-    </a>
+    </Link>
   </div>
 
   
@@ -121,7 +118,7 @@ function BelowTheFold() {
 function AboutMe() {
   return (
     <section id="aboutme">
-    <div className="bg-secondary font-body text-textPrimary relative py-10">
+    <div className="bg-secondary font-body text-textPrimary relative py-10 z-1">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
 
         {/* IMAGE WRAPPER */}
@@ -132,7 +129,7 @@ function AboutMe() {
             src={kateballpose}
             alt="Workout pose background"
             className="
-              z-10 
+              z-1 
               rounded-b-2xl 
               h-[300px] 
               md:h-[650px] 
@@ -147,7 +144,7 @@ function AboutMe() {
             height={260}
             className="
               absolute 
-              z-20 
+              z-2 
               rounded-2xl
               -bottom-40 
               left-30 
@@ -176,7 +173,7 @@ function AboutMe() {
               intention and nourish with purpose together!
             </p>
           </div>
-          <div className='bg-[#E7D9C8] rounded-l-2xl p-6 justify-center items-center shadow-2xl'>
+          <div className='bg-[#F3E8DA] rounded-l-2xl p-6 justify-center items-center shadow-2xl'>
             <h3 className='font-heading text-textPrimary text-2xl mb-4 text-center'>Gyms You Can Find Me At</h3>
             <div className='grid grid-cols-2 gap-10 justify-center items-center pt-2'>
             
@@ -194,8 +191,6 @@ function AboutMe() {
               </div>
               
              
-              
-              
               
             </div>
           </div>
