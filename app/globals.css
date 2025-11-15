@@ -5,6 +5,10 @@
   color-scheme: only light;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {
