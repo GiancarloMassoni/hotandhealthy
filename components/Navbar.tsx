@@ -5,7 +5,10 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import kbLogo from '@/public/kblogo.png'
 import Image from 'next/image'
 import Link from 'next/link'
-const navigation = [{ name: 'Home', href: '/' },
+import { usePathname } from 'next/navigation'
+
+
+let navigation = [{ name: 'Home', href: '/' },
   { name: 'Events', href: '/events' },
   { name: 'Class Schedule', href: '/#schedule' },
   { name: 'Meal Plans', href: '/mealplans' },
@@ -15,8 +18,17 @@ const navigation = [{ name: 'Home', href: '/' },
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const pathname = usePathname();
+  if(pathname === '/') {
+    navigation = [{ name: 'Home', href: '/' },
+  { name: 'Events', href: '/events' },
+  { name: 'Class Schedule', href: '#schedule' },
+  { name: 'Meal Plans', href: '/mealplans' },
+  { name: 'About Me', href: '#aboutme' },]
+  }
+  
   return (
-    <header className="absolute inset-x-0 top-0 z-50 bg-secondary">
+     <header className="absolute inset-x-0 top-0 z-50 bg-secondary">
         <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 p-1.5">
@@ -111,5 +123,7 @@ export default function Navbar() {
           </DialogPanel>
         </Dialog>
       </header>
-  );
+    );
+    
+  
 }
