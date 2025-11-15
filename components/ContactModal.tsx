@@ -28,7 +28,7 @@ export default function ContactModal(contactModalProps: ContactModalProps) {
           onClick={() => setOpen(false)}
         >
           <div
-            className="bg-white p-6 rounded-2xl w-full max-w-md shadow-xl relative"
+            className="bg-white p-6 rounded-2xl w-full max-w-sm shadow-xl relative"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
@@ -49,16 +49,28 @@ export default function ContactModal(contactModalProps: ContactModalProps) {
               {/* FormSubmit options */}
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
-
+            <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm text-left">Name</label>
+                <label className="block text-sm text-left">First Name</label>
                 <input
                   type="text"
-                  name="name"
+                  name="fname"
+                  required
+                  className="w-full p-2 border-gray-300 border rounded-lg"
+                />
+                
+              </div>
+              <div className="inline">
+                <label className="block text-sm text-left">Last Name</label>
+                <input
+                  type="text"
+                  name="lname"
                   required
                   className="w-full p-2 border-gray-300 border rounded-lg"
                 />
               </div>
+            </div>
+              
 
               <div>
                 <label className="block text-sm text-left">Email</label>
