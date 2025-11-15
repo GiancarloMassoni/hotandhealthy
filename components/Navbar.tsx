@@ -92,6 +92,7 @@ export default function Navbar() {
                       key={item.name}
                       href={item.href}
                       className="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-textPrimary font-body hover:bg-gray-50 "
+                      onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.name}
                     </Link>
