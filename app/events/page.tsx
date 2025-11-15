@@ -6,10 +6,10 @@ export default function PrivateEventsPage() {
 
   return (
     <main className="">
-        <section className="bg-secondary text-textPrimary font-body relative flex justify-center items-center pt-30 md:pt-10 h-[80vh]">
+        <section className="bg-secondary text-textPrimary font-body relative flex justify-center items-center pt-30 md:pt-10 h-[70vh]">
             <div className="absolute z-10 flex flex-col">
                 <h1 className=" text-black text-center text-4xl md:text-5xl font-heading py-10">Private Events & Classes</h1>
-             <p className="text-lg md:text-xl max-w-2xl mx-auto leading-8">
+             <p className="text-lg md:text-xl max-w-2xl mx-6 leading-8">
           Host your next private event with me! We tailor every session to your
           group’s size, skill level, and goals. Perfect for birthdays, corporate
           events, or a special day with friends.
