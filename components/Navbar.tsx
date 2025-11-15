@@ -8,25 +8,25 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 
-let navigation = [{ name: 'Home', href: '/' },
-  { name: 'Events', href: '/events' },
-  { name: 'Class Schedule', href: '/#schedule' },
-  { name: 'Meal Plans', href: '/mealplans' },
-  { name: 'About Me', href: '/#aboutme' },
-  
-]
-
-export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const pathname = usePathname();
-  if(pathname === '/') {
-    navigation = [{ name: 'Home', href: '/' },
+let navigation = 
+ [{ name: 'Home', href: '/' },
   { name: 'Events', href: '/events' },
   { name: 'Class Schedule', href: '#schedule' },
   { name: 'Meal Plans', href: '/mealplans' },
   { name: 'About Me', href: '#aboutme' },]
+
+
+export default function Navbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const pathname = usePathname();
+  if(pathname !== '/') {
+    navigation = [{ name: 'Home', href: '/' },
+  { name: 'Events', href: '/events' },
+  { name: 'Class Schedule', href: '/#schedule' },
+  { name: 'Meal Plans', href: '/mealplans' },
+  { name: 'About Me', href: '/#aboutme' },]
   }
-  
+  console.log(pathname)
   return (
      <header className="absolute inset-x-0 top-0 z-50 bg-secondary">
         <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
